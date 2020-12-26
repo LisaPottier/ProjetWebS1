@@ -1,82 +1,99 @@
-/*font-------------------------------------------------------------*/
+/*style font----------------------------------------------------------*/
 body{
     font-family: 'Roboto',sans-serif;
     background-size:100%; 
-    font-size:100%;  
+    font-size:10px;  
+    width :100vw;
+    height: 100vh;
 }
 header h1{color: white;
-    /*text-shadow:#000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
-    ;*/ /* -> marche sur tous les navigateurs ( mais moins beau)*/
     -webkit-text-stroke: 1px black;/*marche pas sur tous les navigateurs*/
 }
-h3{color: darkorange;
-    font-size: 70%;
-    margin:0;}
-
+h2{color: black; /*MENU*/
+    font-size: 15px;
+    margin:0;
+}
+h3{color: darkorange; /*TEAM1/2 */
+    margin:0;
+}
+h4{color: black; /*nom superheroes*/
+    margin:0;
+}
 header{
     font-family: 'KaBlam';
-    border:black 2px solid;
+    border:black 1px solid;
     text-align: center;
 }
 /*------------------------------------------------------------------*/
-.gradient{
+.gradient{/*fond du titre*/
+    height: 45px;
     background-color: red;
     background:
       radial-gradient( circle, darkred 30%,transparent 15%),
       radial-gradient( circle, darkred 30%,red 15%) 30px 30px;
     background-size: 20px 20px;}
 
-#menu{
+/*style du menu--------------------------------------------------------------------*/
+.menu{
     display:flex;
     flex-direction: column;
-    width: 35vw;
+    width: 100px;
     background-color:grey;
     border:black solid 2px;
-/*    padding:2vh;*/
-    
+    grid-column: 1;   
 }
 #bouton{
     display:flex;
     flex-direction: column;
     align-items: center;
 }
-
-#menu input{
+.menu input,label{/*taille des barres de saisis et du Ajouter dessus*/
     width:90%;
 }
-
 .heroes_name div{
     display: flex;
     align-items: center;
 }
-
-.heroes_name button{
-
+.heroes_name button{/*croix à coté des héros---------*/
     background-color: transparent;
     border:transparent;
     color:black;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 90%;
+    padding:2px;
     transform:rotate(45deg);
-    
 }
 .heroes_name button:hover{
     background-color:white;
-}
-
-#bouton button{
-    padding: 2vh;
+}                   /*-------------------------------*/
+#bouton button{/*bouton "lancer le match*/
+    padding: 10px;
     background-color: red;
-    width: 40%;
-    height:25vh;
+    width:60px;
+    height:60px;
     border-radius: 50%;
     border: darkred solid 3px;
     font-family:'KaBlam';
+    font-size:10px;
     color: white;
 }
-
-.team h3, .heroes_name div,form, #bouton{
-    padding:2vh;
+.team h3, .heroes_name div,form, #bouton,#menu_title h2{
+    padding:7px;
     border-top: black solid 1px;
+}
+/*------------------------------------------------------------------------------*/
+.corps {
+    display: grid;
+    grid-template-columns: 104px auto;
+    grid-row: 100%;
+    height:88%;
+}
+
+.combat {
+    grid-column: 2;
+    background: url(./image/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

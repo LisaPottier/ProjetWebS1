@@ -17,45 +17,51 @@
     <header class="gradient">
         <h1>HEROES BATTLE</h1>
     </header>
-    <section id="menu">
-        <div id=menu_title>
-            <h2>MENU</h2>
-        </div>
-        <div class="team team1">
-            <h3>TEAM 1</h3>
-            <div class="heroes_name">
-                <div>
-                    <h4> Superman </h4>
-                    <button>+</button>
-                </div>
 
+    <section class="corps"> <!-- pour pouvoir faire un grid de 2 colonnes sans le bandeau de titre ( surement une meilleur solution possible-->
+        <section class ="menu">
+            <div id=menu_title>
+                <h2>MENU</h2>
             </div>
-            <form>
-                <label>Ajouter</label>
-                <input type="text" class="ajouter" name="name" required
-                                    minlength="4" maxlength="8" size="10">
-            </form>
-        </div>
+            <div class="team team1">
+                <h3>TEAM 1</h3>
+                <div class="heroes_name">
+                    <div>
+                        <h4> Superman </h4>
+                        <button>+</button>
+                    </div>
 
-        <div class="team team2">
-            <h3>TEAM 2</h3>
-            <form>
-                <label>Ajouter</label>
-                <input type="text" class="ajouter" name="name" required
-                                    minlength="4" maxlength="8" size="10">
-            </form>
-        </div>
-        <div id=bouton>
-            <button> LANCER LE MATCH !</button>
-        </div>
+                </div>
+                <form>
+                    <label>Ajouter</label>
+                    <input type="text" class="ajouter" name="name" required
+                                        minlength="4" maxlength="8" size="10">
+                </form>
+            </div>
+
+            <div class="team team2">
+                <h3>TEAM 2</h3>
+                <form>
+                    <label>Ajouter</label>
+                    <input type="text" class="ajouter" name="name" required
+                                       minlength="4" maxlength="8" size="10">
+                </form>
+            </div>
+            <div id=bouton>
+                <button> LANCER LE MATCH !</button>
+            </div>
         
-    </section>
+        </section>
 
-    <section id="combat">
+        <section class="combat">
+        <div id=background>
+            <!--<img alt="Font" src="image/background.jpg" >-->
+        </div>
         <div id="combat_team1">
         </div>
         <div id="combat_team2">
         </div>
+        </section>
     </section>
 
 </body>
