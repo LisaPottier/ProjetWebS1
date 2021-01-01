@@ -29,8 +29,8 @@ header{
     height: auto;
     background-color: red;
     background:
-      radial-gradient( circle, darkred 30%,transparent 15%),
-      radial-gradient( circle, darkred 30%,red 15%) 30px 30px;
+    radial-gradient( circle, darkred 30%,transparent 15%),
+    radial-gradient( circle, darkred 30%,red 15%) 30px 30px;
     background-size: 20px 20px;}
 
 /*style du menu--------------------------------------------------------------------*/
@@ -96,4 +96,71 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display:flex;
+    justify-content: space-around;
+    align-items:start;
+}
+
+#combat_team1, #combat_team2
+{
+    width:40vw;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+.heroesImg
+{
+    height:20vh;
+    margin:2vh 1vw;
+}
+
+/* Barres de vie -----------------------------*/
+
+.bar{
+    /*position:absolute;
+    bottom: 0;*/
+    position:relative;
+    height:auto;
+    width: 40vw;
+    height:10vh;
+    margin-top: 1vh;
+}
+
+.barlifeContainer{
+    position:absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lifebar.child{
+    position: absolute;
+    height: 40%;
+    width: 70%;
+    background: orange;
+    margin: 1vh 1vw;
+    transform: scaleX(1);
+    opacity : 100%;
+    transform-origin: top right;
+}
+
+.lifebar.child.droit{
+    background: #3EAAF3;
+}
+
+.lifebar.parent{
+    height: 100%;
+    width: 75%;
+}
+
+@keyframes lifedeplate{
+    from{
+        width : 100%;
+    }
+    to{
+        width : 0%;
+    }
 }

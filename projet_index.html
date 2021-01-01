@@ -26,42 +26,52 @@
             <div class="team team1">
                 <h3>TEAM 1</h3>
                 <div class="heroes_name">
-                    <div>
-                        <h4> Superman </h4>
-                        <button>+</button>
-                    </div>
-
                 </div>
                 <form>
                     <label>Ajouter</label>
                     <input type="text" class="ajouter" name="name" required
                                         minlength="4" maxlength="8" size="10">
+                    <button onclick="GetInput(this);return false">OK</button>
                 </form>
+
             </div>
 
             <div class="team team2">
                 <h3>TEAM 2</h3>
+                <div class="heroes_name">
+                </div>
                 <form>
                     <label>Ajouter</label>
                     <input type="text" class="ajouter" name="name" required
                                        minlength="4" maxlength="8" size="10">
+                    <button onclick="GetInput(this);return false">OK</button>
                 </form>
             </div>
-            <div id=bouton>
+            <div id=boutonStart>
                 <button> LANCER LE MATCH !</button>
             </div>
         
         </section>
 
         <section class="combat">
-        <div id=background>
-            <!--<img alt="Font" src="image/background.jpg" >-->
-        </div>
         <div id="combat_team1">
+            <div class="bar">
+                <div class="barlifeContainer">
+                    <div class="lifebar child gauche"></div>
+                    <img class="lifebar parent" src="./image/life-bar.png">
+                </div>
+            </div>
+        </div>
         </div>
         <div id="combat_team2">
+            <div class="bar">
+                <div class="barlifeContainer">
+                    <div class="lifebar child droit"></div>
+                    <img class="lifebar parent" src="./image/life-bar.png">
+                </div>
+            </div>
         </div>
         </section>
     </section>
-
+    <script type="text/javascript" src="./api-heroes.js"></script>
 </body>
