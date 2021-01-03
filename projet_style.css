@@ -13,9 +13,17 @@ h2{color: black; /*MENU*/
     font-size: 20px;
     margin:0;
 }
-h3{color: darkorange; /*TEAM1/2 */
+#team1{color: darkorange; /*TEAM1 */
     margin:0;
+    size:15px;
 }
+
+#team2{color: blue; /*TEAM2 */
+    margin:0;
+    size:15px;
+}
+
+
 h4{color: black; /*nom superheroes*/
     margin:0;
 }
@@ -67,7 +75,7 @@ header{
 .heroes_name button:hover{
     background-color:white;
 }                   /*-------------------------------*/
-#bouton button{/*bouton "lancer le match*/
+#boutonStart button{/*bouton "lancer le match*/
     padding: 10px;
     background-color: red;
     width:80px;
