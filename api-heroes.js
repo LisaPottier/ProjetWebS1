@@ -11,6 +11,8 @@
 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
 	const url = "https://superheroapi.com/api/";
 	var start = document.getElementById('boutonStart');
+	var superheroes = ["A-Bomb", "Abe Sapien", "Abin Sur", "Abomination", "Abraxas", "Absorbing Man", "Adam Monroe", "Adam Strange", "Agent Bob", "Agent Zero", "Air-Walker", "Ajax", "Alan Scott", "Alex Mercer", "Alfred Pennyworth", "Alien", "Amazo", "Angel", "Angel", "Angel Dust", "Angel Salvadore", "Animal Man", "Annihilus", "Ant-Man", "Ant-Man II", "Anti-Monitor", "Anti-Venom", "Apocalypse", "Aquababy", "Aqualad", "Aquaman", "Arachne", "Archangel", "Arclight", "Ardina", "Ares", "Ariel", "Armor", "Atlas", "Atlas", "Atom Girl", "Atom II", "Aurora", "Azazel", "Azrael", "Bane", "Banshee", "Bantam", "Batgirl", "Batgirl IV", "Batgirl VI", "Batman", "Batman", "Batman II", "Battlestar", "Batwoman V", "Beast", "Beast Boy", "Ben 10", "Beta Ray Bill", "Beyonder", "Big Barda", "Big Daddy", "Big Man", "Bill Harken", "Bionic Woman", "Bird-Brain", "Bishop", "Bizarro", "Black Adam", "Black Bolt", "Black Canary", "Black Canary", "Black Cat", "Black Flash", "Black Knight III", "Black Lightning", "Black Mamba", "Black Manta", "Black Panther", "Black Widow", "Blackout", "Blackwing", "Blackwulf", "Blade", "Bling!", "Blink", "Blizzard II", "Blob", "Bloodaxe", "Bloodhawk", "Blue Beetle III", "Boba Fett", "Boom-Boom", "Box IV", "Brainiac", "Brainiac 5", "Brundlefly", "Buffy", "Bullseye", "Bumblebee", "Bushido", "Cable", "Callisto", "Cameron Hicks", "Cannonball", "Captain America", "Captain Atom", "Captain Britain", "Captain Cold", "Captain Hindsight", "Captain Marvel", "Captain Marvel", "Captain Marvel II", "Captain Planet", "Carnage", "Catwoman", "Century", "Chamber", "Chameleon", "Changeling", "Cheetah", "Cheetah III", "Chuck Norris", "Citizen Steel", "Claire Bennet", "Cloak", "Clock King", "Colossus", "Copycat", "Cottonmouth", "Crystal", "Cyborg", "Cyborg Superman", "Cyclops", "Dagger", "Daphne Powell", "Daredevil", "Darkhawk", "Darkman", "Darkseid", "Darkstar", "Darth Maul", "Darth Vader", "Dash", "Data", "Dazzler", "Deadman", "Deadpool", "Deadshot", "Deathlok", "Deathstroke", "Demogoblin", "Destroyer", "Diamondback", "DL Hawkins", "Doc Samson", "Doctor Doom", "Doctor Fate", "Doctor Octopus", "Doctor Strange", "Domino", "Donatello", "Doomsday", "Doppelganger", "Dormammu", "Dr Manhattan", "Drax the Destroyer", "Ego", "Elastigirl", "Electro", "Elektra", "Elle Bishop", "Elongated Man", "Emma Frost", "Enchantress", "Ethan Hunt", "Etrigan", "Evil Deadpool", "Evilhawk", "Exodus", "Falcon", "Fallen One II", "Faora", "Feral", "Fin Fang Foom", "Firebird", "Firelord", "Firestar", "Firestorm", "Firestorm", "Flash", "Flash II", "Flash III", "Flash IV", "Forge", "Franklin Richards", "Franklin Storm", "Frenzy", "Galactus", "Gambit", "Gamora", "Gary Bell", "General Zod", "Ghost Rider", "Giganta", "Gladiator", "Goblin Queen", "Godzilla", "Gog", "Goku", "Gorilla Grodd", "Gravity", "Greedo", "Green Arrow", "Green Goblin", "Green Goblin II", "Groot", "Guy Gardner", "Hal Jordan", "Han Solo", "Hancock", "Harley Quinn", "Harry Potter", "Havok", "Hawk", "Hawkeye", "Hawkeye II", "Hawkgirl", "Heat Wave", "Hela", "Hellboy", "Hellcat", "Hercules", "Hit-Girl", "Hope Summers", "Hulk", "Human Torch", "Huntress", "Husk", "Hybrid", "Hydro-Man", "Hyperion", "Iceman", "Impulse", "Indiana Jones", "Indigo", "Ink", "Invisible Woman", "Iron Fist", "Iron Man", "Iron Monger", "Isis", "Jack of Hearts", "Jack-Jack", "James Bond", "James T. Kirk", "Jar Jar Binks", "Jason Bourne", "Jean Grey", "Jean-Luc Picard", "Jennifer Kale", "Jessica Cruz", "Jessica Jones", "Jim Powell", "JJ Powell", "John Constantine", "John Wraith", "Joker", "Jolt", "Jubilee", "Judge Dredd", "Juggernaut", "Junkpile", "Justice", "Kang", "Kathryn Janeway", "Katniss Everdeen", "Kevin 11", "Kick-Ass", "Kid Flash", "Killer Croc", "Killer Frost", "Kilowog", "King Kong", "King Shark", "Kingpin", "Klaw", "Kool-Aid Man", "Kraven II", "Kraven the Hunter", "Krypto", "Kyle Rayner", "Kylo Ren", "Lady Deathstrike", "Leader", "Leech", "Legion", "Leonardo", "Lex Luthor", "Light Lass", "Lightning Lad", "Lightning Lord", "Living Brain", "Living Tribunal", "Lizard", "Lobo", "Loki", "Longshot", "Luke Cage", "Luke Skywalker", "Luna", "Mach-IV", "Machine Man", "Magneto", "Magog", "Magus", "Man of Miracles", "Man-Bat", "Man-Thing", "Man-Wolf", "Mandarin", "Mantis", "Martian Manhunter", "Marvel Girl", "Master Chief", "Match", "Matt Parkman", "Maverick", "Maxima", "Maya Herrera", "Medusa", "Meltdown", "Mephisto", "Mera", "Metallo", "Metron", "Micah Sanders", "Michelangelo", "Micro Lad", "Mimic", "Misfit", "Miss Martian", "Mister Fantastic", "Mister Freeze", "Mister Knife", "Mister Mxyzptlk", "Mister Sinister", "Mister Zsasz", "Mockingbird", "MODOK", "Molten Man", "Monica Dawson", "Moon Knight", "Moonstone", "Morlun", "Moses Magnum", "Mr Immortal", "Mr Incredible", "Ms Marvel II", "Multiple Man", "Mysterio", "Mystique", "Namor", "Namora", "Namorita", "Naruto Uzumaki", "Nebula", "Negasonic Teenage Warhead", "Nick Fury", "Nightcrawler", "Nightwing", "Niki Sanders", "Nina Theroux", "Northstar", "Nova", "Nova", "Odin", "Offspring", "One Punch Man", "One-Above-All", "Onslaught", "Oracle", "Osiris", "Ozymandias", "Parademon", "Paul Blart", "Penguin", "Phantom Girl", "Phoenix", "Plantman", "Plastic Man", "Plastique", "Poison Ivy", "Polaris", "Power Girl", "Predator", "Professor X", "Professor Zoom", "Psylocke", "Punisher", "Purple Man", "Pyro", "Q", "Question", "Quicksilver", "Quill", "Ra's Al Ghul", "Rachel Pirzad", "Rambo", "Raphael", "Raven", "Ray", "Red Arrow", "Red Hood", "Red Hulk", "Red Mist", "Red Robin", "Red Skull", "Red Tornado", "Rey", "Rhino", "Rick Flag", "Riddler", "Rip Hunter", "Robin", "Robin II", "Robin III", "Robin V", "Robin VI", "Rocket Raccoon", "Rogue", "Ronin", "Rorschach", "Sabretooth", "Sage", "Sandman", "Sasquatch", "Sauron", "Savage Dragon", "Scarecrow", "Scarlet Spider", "Scarlet Spider II", "Scarlet Witch", "Scorpia", "Scorpion", "Sebastian Shaw", "Sentry", "Shadow King", "Shadow Lass", "Shadowcat", "Shang-Chi", "Shatterstar", "She-Hulk", "She-Thing", "Shocker", "Shriek", "Sif", "Silk", "Silver Surfer", "Silverclaw", "Simon Baz", "Sinestro", "Siren", "Siryn", "Skaar", "Snowbird", "Sobek", "Solomon Grundy", "Songbird", "Space Ghost", "Spawn", "Spectre", "Speedy", "Spider-Girl", "Spider-Gwen", "Spider-Man", "Spider-Woman", "Spider-Woman III", "Spock", "Spyke", "Star-Lord", "Stardust", "Starfire", "Stargirl", "Static", "Steel", "Stephanie Powell", "Steppenwolf", "Storm", "Stormtrooper", "Sunspot", "Superboy", "Superboy-Prime", "Supergirl", "Superman", "Swamp Thing", "Swarm", "Sylar", "Synch", "T-1000", "T-800", "T-850", "T-X", "Taskmaster", "Tempest", "Thanos", "The Cape", "The Comedian", "Thing", "Thor", "Thor Girl", "Thunderbird", "Thunderstrike", "Thundra", "Tiger Shark", "Tigra", "Tinkerer", "Toad", "Toxin", "Toxin", "Triplicate Girl", "Triton", "Two-Face", "Ultragirl", "Ultron", "Utgard-Loki", "Vanisher", "Vegeta", "Venom", "Venom II", "Venom III", "Venompool", "Vibe", "Vindicator", "Violet Parr", "Vision", "Vixen", "Vulture", "Walrus", "War Machine", "Warlock", "Warp", "Warpath", "Wasp", "Watcher", "White Canary", "Wildfire", "Winter Soldier", "Wolfsbane", "Wolverine", "Wonder Girl", "Wonder Man", "Wonder Woman", "Wyatt Wingfoot", "X-23", "X-Man", "Yellowjacket", "Yellowjacket II", "Ymir", "Yoda", "Zatanna", "Zoom"]
+
 
 
 	// Ajouter un superhéro dans l'input
@@ -18,7 +20,8 @@
 		console.log("in getinput !");
 		  var txt;
 		  // récupére la valeur de l'input
-		  persoUser = $this.previousElementSibling.value;
+			persoUser = $this.previousElementSibling.value;
+		  console.log(persoUser);
 		  /* récupére le nom des classes du container parent le plus proche de classe "team" de l'input */
 		  var team = $this.closest(".team").className; 
 		  console.log(team);
@@ -181,14 +184,13 @@
 //-------------------------------------
 
 function autocomplete(inp, arr) {
-  /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
+  /*inp : text field element
+  arr: tableau des valeurs possibles ( ici les noms des superheros*/
   var currentFocus;
   /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function(e) {
       var a, b, i, val = this.value;
-      /*close any already open lists of autocompleted values*/
-      closeAllLists();
+      closeAllLists();/*close any already open lists of autocompleted values*/
       if (!val) { return false;}
       currentFocus = -1;
       /*create a DIV element that will contain the items (values):*/
@@ -203,7 +205,7 @@ function autocomplete(inp, arr) {
         if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
           /*create a DIV element for each matching element:*/
           b = document.createElement("DIV");
-          /*make the matching letters bold:*/
+		  /*make the matching letters bold:*/
           b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
           b.innerHTML += arr[i].substr(val.length);
           /*insert a input field that will hold the current array item's value:*/
@@ -213,13 +215,14 @@ function autocomplete(inp, arr) {
               /*insert the value for the autocomplete text field:*/
               inp.value = this.getElementsByTagName("input")[0].value;
               /*close the list of autocompleted values,
-              (or any other open lists of autocompleted values:*/
+			  (or any other open lists of autocompleted values:*/
               closeAllLists();
           });
           a.appendChild(b);
         }
       }
   });
+
   /*execute a function presses a key on the keyboard:*/
   inp.addEventListener("keydown", function(e) {
       var x = document.getElementById(this.id + "autocomplete-list");
@@ -277,8 +280,7 @@ function autocomplete(inp, arr) {
   });
 }
 
-/*An array containing all the country names in the world:*/
-var superheroes = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the superheroes array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), superheroes);
+/*initialisation de la fonction*/
+autocomplete(document.getElementById("ajouterTeam1"), superheroes);
+autocomplete(document.getElementById("ajouterTeam2"), superheroes);
